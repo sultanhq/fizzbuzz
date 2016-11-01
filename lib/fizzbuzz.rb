@@ -1,11 +1,19 @@
 def fizzbuzz(number)
-  if number % 3 == 0 && number % 5 == 0
-    'fizzbuzz'
-  elsif number % 3 == 0
-    'fizz'
-  elsif number % 5 == 0
-    'buzz'
+  if (number.is_divisible_by?(3)  && number.is_divisible_by?(5))
+    "fizzbuzz"
+  elsif number.is_divisible_by?(3)
+    "fizz"
+  elsif number.is_divisible_by?(5)
+    "buzz"
   else
     number
   end
+end
+
+class Fixnum
+
+  def is_divisible_by?(divisor)
+    self % divisor == 0
+  end
+
 end
